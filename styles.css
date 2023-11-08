@@ -7,13 +7,7 @@
 body {
   margin: 0;
   height: 100%;
-}
-
-.container{
-  background-image: url('doge-27437-1920x1200.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -29,7 +23,7 @@ h2 {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  color: black;
+  color: white;
   height: 65px;
   padding: 1em;
   font-weight:bolder;
@@ -93,12 +87,49 @@ h2 {
 
 }
 
+/* video background */
+#background-video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/* page content */
+h1, h2 {
+  color: white;
+  font-family: Trebuchet MS;
+  font-weight: bold;
+  text-align: center;
+}
+
+h1 {
+  font-size: 32px;
+  margin-top: 30vh; 
+}
+
+
+
+h2 { font-size: 3rem; }
+
+@media (max-width: 750px) {
+    #background-video { display: none; }
+    body {
+      background: url("https://assets.codepen.io/6093409/river.jpg") no-repeat;
+      background-size: cover;
+    }
+}
+
 .header-content{
  display: flex;
  justify-content: center;
  align-items: center;
  flex-direction: column;
- height: 100vh;
 }
 
 .header-content h1{
@@ -108,13 +139,22 @@ h2 {
  font-size: 30px;
 }
 
+.header-content button{
+  width: 140px;
+  background-color: black;
+  color: white;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
 .selection{
   width: 200px;
   margin-top: 20px;
 }
 
 .wrapper{
-  background-color: darkgreen;
+  background-color: #4d4855;
+background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
   height: 100vh;
 }
 
@@ -129,19 +169,47 @@ h2 {
 }
 li a{
   text-decoration: none;
-  color: black;
+  color: white;
  }
- /*CSS FOR SHOPPING CONTENT */
-.shopping-content{
-  height: 100vh;
-  background-color: blue;
+
+ .wrapper{
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row-reverse;
-  gap: -50px;
+ }
+
+.row{
+  display: grid;
+  max-width: 1170px;
+  width: 100%;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 50px 30px;
 }
 
+.row .left{
+  overflow: hidden;
+}
+
+.row .left img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.row .right{
+  display: flex;
+  align-items: center;
+}
+
+.row .right .content{
+  padding-left: 20px;
+}
+
+.row .right .content p{
+  font-size: 16px;
+  line-height: 26px;
+  padding-bottom: 15px;
+}
 .content2 p{
   width: 50%;
 }
@@ -155,5 +223,7 @@ li a{
   background-color: gray;
   height: 100vh;
 }
+
+
 
 

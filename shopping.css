@@ -137,3 +137,14 @@
    text-decoration: none;
    color: white;
   }
+
+ .sidebar{
+  width: 20%;
+  background-color: gray;
+  float: left;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+ }
